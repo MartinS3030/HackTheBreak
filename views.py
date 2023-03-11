@@ -1,7 +1,21 @@
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for
 
+
+import sys
+sys.path.append('Snake_game')
+
+# Import the module's functions
+from Snake_game.main import main
+
+
 views = Blueprint(__name__, 'views')
 
+
+@views.route('/run-program')
+def run_program():
+    # Your Python program code goes here
+    main()
+    return render_template('index.html', main=main())
 
 @views.route('/')
 def home():
