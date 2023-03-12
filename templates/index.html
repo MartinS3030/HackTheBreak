@@ -6,19 +6,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!------------------------>
+    <!-- Required meta tags -->
+    <!------------------------>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
-    <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="navbar-nav d-flex">
+                <a class="nav-link" href="#">Eat Your Worries!</a>
+            </div>
+            <div class="d-flex navbar-nav">
+                <a class="nav-link" href="#">FAQ</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <p class="navbar-brand" href="#">
+
+    </p>
+    <main>
+        <div>
+            <h1>Instructions</h1>
+            <p>
+                1. Read the questions! <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;These will be displayed on the screen. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;You have 10 seconds to read each question before the game starts. <br><br>
+                2. Answer the questions! <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;The answers will be presented in different colors. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Remember which color represents the correct answer. <br><br>
+                3. Play the game! <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Eat the correct color that corresponds to the answer you chose. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;You get <b>100 points</b>for each correct answer. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;But be careful! You lose<b>50 points</b>for each wrong answer. <br><br>
+            </p>
+        </div>
+    </main>
+    <a class="btn btn-outline-success">Play Now</a>
+
+    <template id="ScoreboardTemplate">
+        <div class="card-group">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-name"> Product # </h5>
+                    <p>
+                        <span class="product_text_size">Price:</span>
+                        <span class="card-price">price</span><br>
+                        <span class="product_text_size">Location:</span>
+                        <span class="card-store">location</span><br>
+                        <span class="product_text_size"> Ingredients:</span>
+                        <span class="card-text">ingredients</span>
+                    </p>
+                    <a class="btn btn-primary card-href">See more</a>
+                    <p class="card-time"><small class="text-muted">Last updated # </small></p>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!-- <div>
         {% block content %}
         <h1>Home Page</h1>
         <p>hello, {{ name }}!</p>
         {% endblock %}
-    </div>
-    <script
-    type = "text/javascript"
-    src="{{ url_for('static', filename='index.js') }}"
-    ></script>
+    </div> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
 </body>
 
 </html>
